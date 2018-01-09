@@ -37,7 +37,7 @@ $ screen -d -m rq worker
 
 8. Finally, start the web service...
 
-    i. ... either directly, for testing:
+    i. ... directly, for testing:
     ```bash
     (virtualenv) $ python run.py
     ```
