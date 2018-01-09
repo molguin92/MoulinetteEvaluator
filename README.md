@@ -13,7 +13,7 @@ Service for evaluating programs server-side, using dynamic docker instances for 
     >>> sudo rabbitmqctl set_permissions -p <vhost> <user> ".*" ".*" ".*"
     ```
     
-    ii. Store the values for <user>, <pass>, <vhost> and <tag> as the following environment variables:
+    ii. Store the values for \<user\>, \<pass\>, \<vhost\> and \<tag\> as the following environment variables:
     ```bash
     export MOULINETTE_RABBIT_USER=<user>
     export MOULINETTE_RABBIT_PASS=<pass>
