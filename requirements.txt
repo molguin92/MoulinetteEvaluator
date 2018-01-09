@@ -3,4 +3,5 @@ Flask-Login
 Flask-RESTful
 gunicorn
 docker
-celery
+redis
+rq

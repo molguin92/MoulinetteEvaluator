@@ -1,7 +1,7 @@
 from flask import make_response, request
 from flask_restful import Resource
 
-from moulinette import app, docker_client
+from moulinette import docker_client
 
 class EvaluatorResource(Resource):
     def post(self):
