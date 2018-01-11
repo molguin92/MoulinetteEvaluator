@@ -1,11 +1,17 @@
 from flask import make_response, request
 from flask_restful import Resource
+from moulinette import job_serializer, redis_queue
+from moulinette.evaluator.logic import test_program
 
-from moulinette import docker_client
 
 class EvaluatorResource(Resource):
     def post(self):
-        return make_response(docker_client.containers.run("hello-world"))
+        job = redis_queue.enqueue(test_program, "hello")
+        return job_serializer.dumps(job.id)
 
-    def get(self):
-        return self.post()
+class JobResource(Resource):
+    def get(self, id):
+        job = redis_queue.fetch_job(job_serializer.loads(id))
+        return job.result
+
+
